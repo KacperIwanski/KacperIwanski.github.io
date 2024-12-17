@@ -1,43 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+/* Podstawowe style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    <style>
-     div {
-        background-color: aquamarine;
-     }  
-     main{
-display: grid;
-grid-template-columns: 3fr 2fr 5fr;
-grid-auto-rows: 100px;
-grid-gap: 10px;
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+}
 
-     }
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+}
 
-     @media(max-width: 600px){
-        main{
-grid-template-columns: 3fr;
-     }
-    }
+header .container {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-items: start;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
-    </style>
+header h1 {
+  font-size: 2rem;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+section {
+  padding: 40px 20px;
+  background-color: #fff;
+  margin: 20px 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-grid, .projects-grid {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.skill, .project {
+  background-color: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.project img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input, form textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #555;
+}
+
+/* Responsywność */
+@media (max-width: 768px) {
+  header .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  section h2 {
+    font-size: 1.25rem;
+  }
+
+  .skills-grid, .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  form button {
+    padding: 15px;
+  }
+}
+
+
+
+
+
+  </style>
+
+
 </head>
 <body>
-<main>
-    <dIV></dIV>
-    <dIV></dIV>
-    <dIV></dIV>
-    <dIV></dIV>
-    <dIV></dIV>
-    <dIV></dIV>
-    <dIV></dIV>
-    <dIV></dIV>
-    <dIV></dIV>
-</main>
+  <header>
+    <div class="container">
+      <h1>Kacper Iwański</h1>
+      <nav>
+        <ul>
+          <li><a href="#about">O mnie</a></li>
+          <li><a href="#skills">Umiejętności</a></li>
+          <li><a href="#projects">Projekty</a></li>
+          
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <section id="about" class="section">
+    <div class="container">
+      <h2>O mnie</h2>
+      <p>Mam na imie Kacper, uczęszczam do ezn.</p>
+    </div>
+  </section>
 
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Umiejętności</h2>
+      <div class="skills-grid">
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">Uzywanie chatu gpt</div>
+        <div class="skill">Wybitny gracz gier komputerowych</div>
+        <div class="skill">Node.js</div>
+        <div class="skill">Git</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projekty</h2>
+      <div class="projects-grid">
+        <div class="project">
+          <img src="project1.jpg" alt="Projekt 1">
+          <h3>Projekt 1</h3>
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dicta eum ab numquam ipsum esse, eos incidunt nemo minus dolore, doloremque itaque eaque accusantium enim voluptatem aut laudantium aperiam corporis quod..</p>
+        </div>
+        <div class="project">
+          <img src="project2.jpg" alt="Projekt 2">
+          <h3>Projekt 2</h3>
+          <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quas adipisci velit commodi corrupti sequi obcaecati asperiores cupiditate, reprehenderit quisquam nisi dolore animi facilis porro architecto, eveniet quod numquam exercitationem quae!.</p>
+        </div>
+        <div class="project">
+          <img src="project3.jpg" alt="Projekt 3">
+          <h3>Projekt 3</h3>
+          <p>jakis losowy projekt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2024 Kacper Iwański</p>
+    </div>
+  </footer>
 </body>
-
 </html>
